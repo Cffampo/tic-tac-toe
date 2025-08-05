@@ -66,9 +66,30 @@ const game = {
     },
 
     playRound(index){
+        
+        if(this.isGameOver == true){
+            return;
+        }
 
+        const moveSuccessful = gameBoard.setSquare(index, this.currentPlayer.marker);
+        if(!moveSuccessful){
+            return;
+        }
+        
+        if(this.checkWinner(this.currentPlayer.marker)){
+            this.isGameOver = true;
+            alert(this.currentPlayer.name + " wins!");
+        } else {
+            if(this.checkTie()){
+                this.isGameOver = true;
+                alert("It's a tie!")
+            }
+        }
+
+        //switches players
+        if (!this.isGameOver) {
+            this.currentPlayer = (this.currentPlayer === this.player1) ? this.player2 : this.player1;
+        }
     }
-
-
-
 };
+
