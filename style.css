@@ -23,3 +23,11 @@ html, body {
   user-select: none;
   transition: background-color 0.2s ease;
 }
+
+.button_row {
+    display: none;
+}
+
+.scoreboard {
+    display: none;
+}
