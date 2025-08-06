@@ -140,6 +140,7 @@ cells.forEach((cell, index) =>{
         const marker = game.playRound(index);
         if(marker){
             cell.textContent = marker;
+            cell.classList.add(marker);
         }
     })
 })
@@ -151,6 +152,7 @@ restartBoardButton.addEventListener("click", function(){
     game.isGameOver = false;
     cells.forEach((cell, index) =>{
         cell.textContent = "";
+        cell.classList.remove("X", "O");
     })
 })
 

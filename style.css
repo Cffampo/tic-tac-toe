@@ -2,18 +2,34 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f0f4f8;
 }
 
 .gameboard {
     display: none;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+button:hover {
+  background-color: #1e40af;
 }
 
 .cell {
   width: 150px;
   height: 150px;
-  border: 2px solid #333;
+  border: 2px solid #d3dce6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,12 +38,28 @@ html, body {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.2s ease;
+  color: #ffffff;
+}
+
+.cell.X {
+  color: #3b82f6;
+}
+
+.cell.O {
+  color: #ef4444;
 }
 
 .button_row {
     display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .scoreboard {
     display: none;
+    color: #1e293b;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
